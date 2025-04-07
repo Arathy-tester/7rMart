@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [MultiBrowser Testing]" guice-stage="DEVELOPMENT">
+  <parameter name="Edge Test" value="Edge"/>
+  <parameter name="Chrome Test" value="Chrome"/>
+  <test thread-count="5" parallel="tests" name="Test2(failed)">
+    <classes>
+      <class name="testScript.LoginTest">
+        <methods>
+          <include name="verifyWetherUserCanLoginwithValidCredentials"/>
+          <include name="initialiseBrowser"/>
+          <include name="driverQuit"/>
+          <include name="verifyWetherUserCanLoginwithInvalidUsernameandValidpasswordCredentials1"/>
+        </methods>
+      </class> <!-- testScript.LoginTest -->
+      <class name="testScript.HomeTest">
+        <methods>
+          <include name="initialiseBrowser"/>
+          <include name="driverQuit"/>
+          <include name="whetherUserisAbletoLogout"/>
+        </methods>
+      </class> <!-- testScript.HomeTest -->
+    </classes>
+  </test> <!-- Test2(failed) -->
+  <test thread-count="5" parallel="tests" name="Test1(failed)">
+    <classes>
+      <class name="testScript.LoginTest">
+        <methods>
+          <include name="verifyWetherUserCanLoginwithValidCredentials"/>
+          <include name="initialiseBrowser"/>
+          <include name="driverQuit"/>
+          <include name="verifyWetherUserCanLoginwithInvalidUsernameandValidpasswordCredentials1"/>
+        </methods>
+      </class> <!-- testScript.LoginTest -->
+      <class name="testScript.HomeTest">
+        <methods>
+          <include name="initialiseBrowser"/>
+          <include name="driverQuit"/>
+          <include name="whetherUserisAbletoLogout"/>
+        </methods>
+      </class> <!-- testScript.HomeTest -->
+    </classes>
+  </test> <!-- Test1(failed) -->
+</suite> <!-- Failed suite [MultiBrowser Testing] -->
