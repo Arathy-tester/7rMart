@@ -23,7 +23,6 @@ public class HomeTest extends Base{
 		String passwordValue=ExcelUtility.getStringData(0,1,"LoginPage");
 		LoginPage loginpage=new LoginPage(driver);
 		loginpage.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue);
-		//HomePage home=new HomePage(driver);
 		homepage=loginpage.clickOnClick();
 		homepage.clickonadmin();
 		loginpage=homepage.logoutclick();

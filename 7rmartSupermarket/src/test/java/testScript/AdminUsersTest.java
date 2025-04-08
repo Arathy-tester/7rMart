@@ -22,9 +22,11 @@ public class AdminUsersTest extends Base {
 		String usernamevalue=ExcelUtility.getStringData(0,0,"LoginPage");
 		String passwordValue=ExcelUtility.getStringData(0,1,"LoginPage");
 		LoginPage login=new LoginPage(driver);
-		homepage=login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue).clickOnClick();
-		//AdminUsersPage adminUser= new AdminUsersPage(driver);
-		adminusers=homepage.clickonAdminUser().clickonManageUser();
+		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue);
+		homepage=login.clickOnClick();
+		
+		homepage.clickonAdminUser();
+		adminusers=homepage.clickonManageUser();
 		adminusers.clickonNewAdminUser();
 		RandomDataUtility random=new RandomDataUtility();
 		String newuserName=random.createRandomUsername();
@@ -39,8 +41,8 @@ public class AdminUsersTest extends Base {
 		String usernamevalue=ExcelUtility.getStringData(0,0,"LoginPage");
 		String passwordValue=ExcelUtility.getStringData(0,1,"LoginPage");
 		LoginPage login=new LoginPage(driver);
-		homepage=login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue).clickOnClick();
-		//AdminUsersPage adminUser= new AdminUsersPage(driver);
+		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue);
+		homepage=login.clickOnClick();
 		adminusers=homepage.clickonAdminUser().clickonManageUser();
 		adminusers.clickonSearch();
 		String newusername=ExcelUtility.getStringData(0, 0, "NewAdmin");

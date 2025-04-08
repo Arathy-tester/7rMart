@@ -24,8 +24,8 @@ public class SubCategoryTest extends Base {
 		String passwordValue = ExcelUtility.getStringData(0, 1, "LoginPage");
 		
 		LoginPage login = new LoginPage(driver);
-		homepage=login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue).clickOnClick();
-		
+		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue);
+		homepage=login.clickOnClick();
 		//RandomDataUtility randomutility = new RandomDataUtility();
 		//String selectSubCategoryValue = randomutility.createRandomUsername();
 		//String subCategoryValue = randomutility.createRandomPassword();
@@ -46,8 +46,8 @@ public class SubCategoryTest extends Base {
 		String passwordValue = ExcelUtility.getStringData(0, 1, "LoginPage");
 		
 		LoginPage login = new LoginPage(driver);
-		homepage=login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue).clickOnClick();
-
+		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue);
+		homepage=login.clickOnClick();
 		//login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue).clickOnClick();
 		
 		//SubCategoryPage subcategory = new SubCategoryPage(driver);

@@ -5,7 +5,7 @@
 <listeners><listener class-name="listener.Listeners"></listener></listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="testScript.ManageNewsTest">
+      <class name="testScript.HomeTest">
       
       
       </class>

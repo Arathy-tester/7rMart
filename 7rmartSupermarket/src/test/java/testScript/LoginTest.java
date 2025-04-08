@@ -10,16 +10,19 @@ import org.testng.annotations.Test;
 
 import automationCore.Base;
 import constants.Messages;
+import pages.HomePage;
 import pages.LoginPage;
 import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
+	HomePage home;
 	@Test(description="verify whether user is successfully login with valid credentials",priority=1,groups={"smoke"})
 	public void verifyWetherUserCanLoginwithValidCredentials() throws IOException {
 		String usernamevalue=ExcelUtility.getStringData(0,0,"LoginPage");
 		String passwordValue=ExcelUtility.getStringData(0,1,"LoginPage");
 		LoginPage login=new LoginPage(driver);
-		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue).clickOnClick();
+		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue);
+		home=login.clickOnClick();
 		boolean isDashBoardDisplayed=login.isDashBoardDisplayed();
 		Assert.assertTrue(isDashBoardDisplayed,Messages.VALIDCREDENTIALERROR);
 	}
@@ -29,7 +32,8 @@ public class LoginTest extends Base {
 		String usernamevalue=ExcelUtility.getStringData(1,0,"LoginPage");
 		String passwordValue=ExcelUtility.getStringData(1,1,"LoginPage");
 		LoginPage login=new LoginPage(driver);
-		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue).clickOnClick();
+		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue);
+		home=login.clickOnClick();
 		boolean isinValidMessageDisplayed=login.isinValidMessageDisplayed();
 		Assert.assertTrue(isinValidMessageDisplayed,Messages.VALIDCREDENTIALERROR);
 		//Assert.assertTrue(isInvalidCredentialMessageDisplayed, "User was unable to Login with invalid credentials");
@@ -40,7 +44,8 @@ public class LoginTest extends Base {
 		String usernamevalue=ExcelUtility.getStringData(2,0,"LoginPage");
 		String passwordValue=ExcelUtility.getStringData(2,1,"LoginPage");
 		LoginPage login=new LoginPage(driver);
-		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue).clickOnClick();
+		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue);
+		home=login.clickOnClick();
 		boolean isinValidMessageDisplayed=login.isinValidMessageDisplayed();
 		Assert.assertTrue(isinValidMessageDisplayed, Messages.VALIDCREDENTIALERROR);
 		}
@@ -49,7 +54,8 @@ public class LoginTest extends Base {
 		//String usernamevalue=ExcelUtility.getStringData(3,0,"LoginPage");
 		//String passwordValue=ExcelUtility.getStringData(3,1,"LoginPage");
 		LoginPage login=new LoginPage(driver);
-		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue).clickOnClick();
+		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue);
+		home=login.clickOnClick();
 		boolean isinValidMessageDisplayed=login.isinValidMessageDisplayed();
 		Assert.assertTrue(isinValidMessageDisplayed, Messages.VALIDCREDENTIALERROR);
 		}

@@ -20,8 +20,8 @@ public class ManageNewsTest extends Base {
 	String usernamevalue=ExcelUtility.getStringData(0,0,"LoginPage");
 	String passwordValue=ExcelUtility.getStringData(0,1,"LoginPage");
 	LoginPage login=new LoginPage(driver);
-	homepage=login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue).clickOnClick();
-	//ManageNewsPage manageNews=new ManageNewsPage(driver);
+	login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue);
+	homepage=login.clickOnClick();
 	manageNews=homepage.clickonManageNews();
 	manageNews.clickonNewManageNews();
 	String newstoenter=ExcelUtility.getStringData(0, 0, "News");
@@ -35,8 +35,8 @@ public class ManageNewsTest extends Base {
 	   String usernamevalue=ExcelUtility.getStringData(0,0,"LoginPage");
 		String passwordValue=ExcelUtility.getStringData(0,1,"LoginPage");
 		LoginPage login=new LoginPage(driver);
-		homepage=login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue).clickOnClick();
-		//ManageNewsPage manageNews=new ManageNewsPage(driver);
+		login.enterUsernameOnUsernameField(usernamevalue).enterPasswordOnPasswordField(passwordValue).clickOnClick();
+		homepage=login.clickOnClick();
 		manageNews=homepage.clickonManageNews();
 		manageNews.clickonSearchNews();
 		String newstoenter=ExcelUtility.getStringData(0, 0, "News");
